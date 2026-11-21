@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seletiva Teste</title>
+<style>
+body {
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 60px 20px;
+}
+.container {
+  max-width: 350px;
+  margin: auto;
+}
+input, button {
+  padding: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: none;
+}
+button {
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>SELETIVA TESTE</h1>
+<p>Digite sua senha individual para entrar.</p>
+
+<input type="password" id="senha" placeholder="Sua senha">
+<button onclick="entrar()">ENTRAR</button>
+
+<p id="mensagem"></p>
+</div>
+
+<script>
+const participantes = {
+  "TESTE123": "Participante 1",
+  "TESTE456": "Participante 2",
+  "TESTE789": "Participante 3"
+};
+
+function entrar() {
+  const senha = document.getElementById("senha").value;
+  const mensagem = document.getElementById("mensagem");
+
+  if (participantes[senha]) {
+    mensagem.textContent = "Acesso autorizado! Bem-vindo(a), " + participantes[senha] + "!";
+  } else {
+    mensagem.textContent = "Senha inválida ou não autorizada.";
+  }
+}
+</script>
+
+</body>
+</html>
